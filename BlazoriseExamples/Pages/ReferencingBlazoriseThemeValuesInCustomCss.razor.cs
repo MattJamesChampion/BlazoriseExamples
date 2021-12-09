@@ -3,9 +3,14 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazoriseExamples.Pages
 {
-    public partial class CustomCss
+    public partial class ReferencingBlazoriseThemeValuesInCustomCss
     {
         [CascadingParameter] Theme Theme { get; set; }
+
+        public ReferencingBlazoriseThemeValuesInCustomCss()
+        {
+            Theme ??= new Theme();
+        }
 
         public void ChangeThemeColour()
         {
