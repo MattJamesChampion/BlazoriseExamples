@@ -1,9 +1,12 @@
 ﻿@page "/CustomCss"
 
-<h3>Referencing Blazorise Theme Values in Custom CSS</h3>
+<Heading Size="HeadingSize.Is1">Referencing Blazorise Theme Values in Custom CSS</Heading>
 
-<Button Color="Color.Primary">Primary Theme</Button>
-<Button Color="Color.Secondary">Secondary Theme</Button>
-<Div Margin="Margin.Is2.FromTop"
+<Div Margin="Margin.Is2.FromTop.Is3.FromBottom"
      Border="Border.Dark.OnAll"
-     style="box-shadow: 10px 10px var(--b-theme-primary)">Shadow Div!</Div>
+     Padding="Padding.Is2"
+     style="box-shadow: 10px 10px var(--b-theme-primary)">
+    <Heading Size="HeadingSize.Is2">Current Primary Theme Colour: @Theme.ColorOptions.Primary</Heading>
+    <Paragraph>Here's an example of a div with a shadow defined using the CSS variable <code>--b-theme-primary</code>, which is directly linked to the Blazorise theme value (currently @Theme.ColorOptions.Primary). Pretty cool right?</Paragraph>
+    <Button Color="Color.Primary" Clicked="ChangeThemeColour" Width="Width.Is100">Change Theme Colour</Button>
+</Div>
